@@ -1,0 +1,15 @@
+<form class="form">
+  <input type="text"
+         placeholder="Procure por um filme"
+         [formControl]="control"
+         [matAutocomplete]="auto"
+         class="input">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let movie of filteredMovies | async" [value]="movie">
+      {{movie}}
+    </mat-option>
+  </mat-autocomplete>
+  <button class="btn">
+    pesquisar
+  </button>
+</form>
