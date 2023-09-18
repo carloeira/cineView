@@ -4,7 +4,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .red {
-  color: #e35e6b;
+  color: #E30F19;
 }
 
 .v-middle {
@@ -19,4 +19,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .msg-error {
   background-color: #e35e6b;
   color: #fff;
+}
+
+::-webkit-scrollbar{
+  display: none;
 }

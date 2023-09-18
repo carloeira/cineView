@@ -1,0 +1,43 @@
+.full-banner  {
+  padding: 0;
+  min-height: 120px;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.carousel-inner {
+  height: 600px;
+}
+.carousel-inner .carousel-item img {
+  height: 600px;
+  object-fit: cover;
+}
+.carousel-caption h1, p {
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.39);
+}
+.carousel-caption .btn-primary {
+  background-color: #E30F19;
+  border-radius: 5.3;
+  border: none;
+  min-width: 150px;
+}
+@media (min-width: 576px) {
+  .full-banner {
+      min-height: 256px;
+  }
+}
+@media (min-width: 768px) {
+  .full-banner .d-flex {
+      align-items: center;
+  }
+}
+@media (min-width: 992px) {
+  .full-banner {
+      min-height: 50vh;
+  }
+  .full-banner p {
+      color: #999898;
+      max-width: 50vw;
+  }
+}
