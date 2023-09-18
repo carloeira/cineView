@@ -9,6 +9,12 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SearchBarComponent } from './components/template/search-bar/search-bar.component';
+import { HomeComponent } from './views/home/home.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { FilmeService } from "./services/filme.service";
+import { HttpClientModule } from '@angular/common/http';
+import { DetalhesComponent } from './views/detalhes/detalhes.component';
+
 
 @NgModule({
   declarations: [
@@ -16,15 +22,19 @@ import { SearchBarComponent } from './components/template/search-bar/search-bar.
     HeaderComponent,
     FooterComponent,
     NavComponent,
+    HomeComponent,
+    CarouselComponent,
+    DetalhesComponent
   ],
   imports: [
     SearchBarComponent,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [FilmeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

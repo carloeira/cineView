@@ -4,6 +4,7 @@
 }
 
 .header a {
+  position: relative;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -17,6 +18,11 @@
 .header .title-group {
   padding-left: 10px;
   padding-right: 30px;
+}
+
+.header .itensBar {
+  display: inline-flex;
+  align-items: center;
 }
 
 .header .title-group i {

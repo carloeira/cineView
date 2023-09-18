@@ -12,9 +12,10 @@
 .input {
   max-width: 100%;
   width: 300px;
+  border-radius: 5px;
 }
 
 .btn:hover {
-  background-color: #e35e6b;
+  background-color: #E30F19;
   color: #fff;
 }
