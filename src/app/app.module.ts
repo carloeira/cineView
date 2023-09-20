@@ -13,7 +13,10 @@ import { HomeComponent } from './views/home/home.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FilmeService } from "./services/filme.service";
 import { HttpClientModule } from '@angular/common/http';
-import { DetalhesComponent } from './views/detalhes/detalhes.component';
+import { FilmesComponent } from './views/filmes/filmes.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -24,7 +27,7 @@ import { DetalhesComponent } from './views/detalhes/detalhes.component';
     NavComponent,
     HomeComponent,
     CarouselComponent,
-    DetalhesComponent
+    FilmesComponent
   ],
   imports: [
     SearchBarComponent,
@@ -32,7 +35,10 @@ import { DetalhesComponent } from './views/detalhes/detalhes.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
+    NgbModule
   ],
   providers: [FilmeService],
   bootstrap: [AppComponent]
