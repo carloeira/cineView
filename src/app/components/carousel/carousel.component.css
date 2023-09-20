@@ -1,37 +1,28 @@
 .carousel-inner {
   height: 600px;
 }
-.carousel-inner .carousel-item img {
-  height: 600px;
-  object-fit: cover;
+
+.wrapper {
+  position: relative;
+  padding-top: 44%;
 }
+
+.wrapper > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .carousel-caption h1, p {
   text-align: left;
   background-color: rgba(0, 0, 0, 0.39);
 }
+
 .carousel-caption .btn-primary {
   background-color: #E30F19;
   border-radius: 5.3;
   border: none;
   min-width: 150px;
-}
-
-@media (min-width: 576px) {
-  .carousel {
-      min-height: 256px;
-  }
-}
-@media (min-width: 768px) {
-  .carousel .d-flex {
-      align-items: center;
-  }
-}
-@media (min-width: 992px) {
-  .carousel {
-      min-height: 50vh;
-  }
-  .carousel p {
-      color: #999898;
-      max-width: 50vw;
-  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FilmeService } from "src/app/services/filme.service";
 
 @Component({
@@ -8,7 +9,15 @@ import { FilmeService } from "src/app/services/filme.service";
 })
 export class CarouselComponent implements OnInit {
 
-  constructor(private service: FilmeService) {}
+  constructor(
+    private service: FilmeService,
+    config: NgbCarouselConfig
+    ) {
+      config.interval = 2000;
+      config.keyboard = true;
+      config.pauseOnHover = true;
+
+    }
 
   ngOnInit(): void {
     this.fullBanner()
@@ -17,7 +26,7 @@ export class CarouselComponent implements OnInit {
   banners: any = []
 
   fullBanner() {
-    this.service.obterPopulares()
+    this.service.obterProximos()
     .subscribe((banner) => {
       this.banners = banner.results
     })
