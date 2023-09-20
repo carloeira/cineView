@@ -21,5 +21,7 @@ export class CarouselComponent implements OnInit {
     .subscribe((banner) => {
       this.banners = banner.results
     })
-}
+  }
+
+  carousel() {}
 }

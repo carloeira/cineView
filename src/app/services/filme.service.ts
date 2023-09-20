@@ -20,7 +20,7 @@ export class FilmeService extends HandleObservableService {
   private key = environment.apikey;
   language: string = 'pt-BR';
 
-  obterPopulares(page: number = 2): Observable<ResponseApi> {
+  obterPopulares(page: number = 1): Observable<ResponseApi> {
     const endPointUrl = `${this.url}/movie/popular?api_key=${this.key}&language=${this.language}&page=${page}`;
     return this.httpClient
       .get<ResponseApi>(endPointUrl)
@@ -31,7 +31,7 @@ export class FilmeService extends HandleObservableService {
       );
   }
 
-  obterProximos(page: number = 2): Observable<ResponseApi> {
+  obterProximos(page: number = 1): Observable<ResponseApi> {
     const endPointUrl = `${this.url}/movie/upcoming?api_key=${this.key}&language=${this.language}&page=${page}`;
     return this.httpClient
       .get<ResponseApi>(endPointUrl)
