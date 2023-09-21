@@ -1,5 +1,5 @@
 import { throwError } from 'rxjs';
-import { ResponseApi } from 'src/app/components/template/shared/response-api.model';
+import { ResponseApi } from 'src/app/components/shared/response-api.model';
 
 export abstract class HandleObservableService {
   protected handleError(error: ResponseApi | any) {

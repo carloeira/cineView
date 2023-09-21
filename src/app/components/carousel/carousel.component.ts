@@ -16,7 +16,6 @@ export class CarouselComponent implements OnInit {
       config.interval = 2000;
       config.keyboard = true;
       config.pauseOnHover = true;
-
     }
 
   ngOnInit(): void {
@@ -31,6 +30,4 @@ export class CarouselComponent implements OnInit {
       this.banners = banner.results
     })
   }
-
-  carousel() {}
 }

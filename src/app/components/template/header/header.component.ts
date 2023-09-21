@@ -8,17 +8,17 @@ import { HeaderService } from './header.service';
 })
 export class HeaderComponent {
 
-  constructor(private headerService: HeaderService) { }
+  constructor(private service: HeaderService) { }
 
   ngOnInit(): void {
   }
 
   get title(): string {
-    return this.headerService.headerData.title
+    return this.service.headerData.title
   }
 
   get routeUrl(): string {
-    return this.headerService.headerData.routeUrl
+    return this.service.headerData.routeUrl
   }
 
 }

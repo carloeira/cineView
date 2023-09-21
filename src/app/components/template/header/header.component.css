@@ -1,6 +1,8 @@
 .header {
-  display: flex;
+  display: flexbox;
   align-items: center;
+  background-size: cover;
+  height: max-content;
 }
 
 .header a {
@@ -11,6 +13,10 @@
   color: white;
 }
 
+.header a:hover {
+  color: #E30F19;
+}
+
 .header .logo {
   max-height: 32px;
 }
@@ -18,6 +24,7 @@
 .header .title-group {
   padding-left: 10px;
   padding-right: 30px;
+
 }
 
 .header .col {
@@ -28,8 +35,4 @@
 
 .header .title-group i {
   padding-right: 5px;
-}
-
-@media (min-width: 992) {
-  
 }
