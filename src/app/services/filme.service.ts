@@ -3,8 +3,8 @@ import { HttpClient } from "@angular/common/http";
 import { catchError, map, retry } from 'rxjs/operators';
 import { environment } from "src/environments/environment";
 import { Observable } from "rxjs";
-import { ResponseApi } from "../components/template/shared/response-api.model";
-import { HandleObservableService } from 'src/app/components/core/utils/handle-observable-service';
+import { ResponseApi } from "../components/shared/response-api.model";
+import { HandleObservableService } from 'src/app/core/utils/handle-observable-service';
 
 
 @Injectable({
@@ -19,6 +19,15 @@ export class FilmeService extends HandleObservableService {
   private url = environment.api;
   private key = environment.apikey;
   language: string = 'pt-BR';
+
+  obterImagemById(movie_id: number): Observable<ResponseApi> {
+    const endPointUrl = `${this.url}/movie/${movie_id}/images?api_key=${this.key}`;
+    return this.httpClient.get<ResponseApi>(endPointUrl).pipe(
+      retry(),
+      map((data) => data),
+      catchError(this.handleError)
+    );
+  }
 
   obterPopulares(page: number = 1): Observable<ResponseApi> {
     const endPointUrl = `${this.url}/movie/popular?api_key=${this.key}&language=${this.language}&page=${page}`;
@@ -42,13 +51,13 @@ export class FilmeService extends HandleObservableService {
       );
   }
 
-  obterImagemById(movie_id: number): Observable<ResponseApi> {
-    const endPointUrl = `${this.url}/movie/${movie_id}/images?api_key=${this.key}`;
+  obterDetalhes(data: any): Observable<any> {
+    const endPointUrl = `${this.url}/movie/${data}?api_key=${this.key}&language=${this.language}`;
     return this.httpClient.get<ResponseApi>(endPointUrl).pipe(
-      retry(),
+      retry(2),
       map((data) => data),
       catchError(this.handleError)
-    );
+    )
   }
 
   procurarFilmes(search: string = '', page: number = 1): Observable<any> {
@@ -61,4 +70,14 @@ export class FilmeService extends HandleObservableService {
       catchError(this.handleError)
     );
   }
+
+  procurarGenero(id: number, pageNumber: number): Observable<any> {
+    const endPointUrl = `${this.url}/discover/movie?api_key=${this.key}&with_genres=${id}&page=${pageNumber}`;
+    return this.httpClient.get<ResponseApi>(endPointUrl).pipe(
+      retry(2),
+      map((data) => data),
+      catchError(this.handleError)
+    )
+  }
+
 }

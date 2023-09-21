@@ -1,6 +1,7 @@
-<form class="form">
-  <input type="text"
+<form class="form" [formGroup]="search" (ngSubmit)="submit()">
+  <input type="text" id="inputFilme"
          placeholder="Procure por um filme"
+         formControlName="filmeEncontrado"
          [formControl]="control"
          [matAutocomplete]="auto"
          class="input">
@@ -15,3 +16,4 @@
   </i>
   </button>
 </form>
+
