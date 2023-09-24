@@ -16,6 +16,9 @@ const routes: Routes = [
   }, {
     path: 'movie/:id',
     component: SingleMovieComponent
+  },  {
+    path: 'home/movie/:id',
+    component: SingleMovieComponent
   },   {
     path: 'search',
     component: SearchComponent,

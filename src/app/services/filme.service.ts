@@ -20,15 +20,6 @@ export class FilmeService extends HandleObservableService {
   private key = environment.apikey;
   language: string = 'pt-BR';
 
-  obterImagemById(movie_id: number): Observable<ResponseApi> {
-    const endPointUrl = `${this.url}/movie/${movie_id}/images${this.key}`;
-    return this.httpClient.get<ResponseApi>(endPointUrl).pipe(
-      retry(2),
-      map((data) => data),
-      catchError(this.handleError)
-    );
-  }
-
   obterPopulares(page: number = 1): Observable<ResponseApi> {
     const endPointUrl = `${this.url}/movie/popular${this.key}&language=${this.language}&page=${page}`;
     return this.httpClient
@@ -63,7 +54,7 @@ export class FilmeService extends HandleObservableService {
   }
 
   maisAssistidos(page: number = 1): Observable<ResponseApi> {
-    const endPointUrl = `${this.url}/movie/top_rated${this.key}`;
+    const endPointUrl = `${this.url}/movie/top_rated${this.key}&language=${this.language}&page=${page}`;
     return this.httpClient
       .get<ResponseApi>(endPointUrl)
       .pipe(
@@ -71,37 +62,6 @@ export class FilmeService extends HandleObservableService {
         map(this.extractResponseData),
         catchError(this.handleError)
       );
-  }
-
-  obterDetalhes(data: any): Observable<any> {
-    const endPointUrl = `${this.url}/movie/${data}${this.key}&language=${this.language}`;
-    return this.httpClient.get<ResponseApi>(endPointUrl).pipe(
-      retry(2),
-      map((data) => data),
-      catchError(this.handleError)
-    )
-  }
-
-  procurarFilmes(search: string = '', page: number = 1): Observable<any> {
-    const endPointUrl = `${this.url}/search/movie${this.key}&language=${this.language}&query=${search}&page=${page}`;
-    return this.httpClient.get<ResponseApi>(endPointUrl).pipe(
-      retry(2),
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
-  }
-
-  procurarGenero(id: number, pageNumber: number): Observable<any> {
-    const endPointUrl = `${this.url}/discover/movie${this.key}&with_genres=${id}&page=${pageNumber}`;
-    return this.httpClient.get<ResponseApi>(endPointUrl).pipe(
-      retry(2),
-      map((data) => data),
-      catchError(this.handleError)
-    )
-  }
-
-  findMovieById(id: number){
-    return this.httpClient.get<any>(this.url + this.key+'&i='+id);
   }
 
 }

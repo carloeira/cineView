@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
-import { NavComponent } from './components/template/nav/nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './views/home/home.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -22,6 +21,7 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { CardComponent } from './components/card/card.component';
 import { SingleMovieComponent } from './components/single-movie/single-movie.component';
 import { SearchComponent } from './components/search/search.component';
+import { ListsComponent } from './components/lists/lists.component';
 
 
 @NgModule({
@@ -29,7 +29,6 @@ import { SearchComponent } from './components/search/search.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavComponent,
     SearchComponent,
     HomeComponent,
     CarouselComponent,
@@ -37,7 +36,8 @@ import { SearchComponent } from './components/search/search.component';
     ResultsComponent,
     MoviesListComponent,
     CardComponent,
-    SingleMovieComponent
+    SingleMovieComponent,
+    ListsComponent
   ],
   imports: [
     BrowserModule,

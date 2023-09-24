@@ -2,7 +2,7 @@
   <h1>Detalhes sobre o filme</h1>
 </div>
 <div class="container-movie-page" *ngIf="movie !== undefined">
-  <div class="single-movie-container" style="background-image: url('{{ movie.backdrop_path }}');">
+  <div class="single-movie-container">
     <div *ngIf="movie !== undefined">
       <div class="badge">
         <img src="{{ movie.poster_path }}" alt="" class="card" />

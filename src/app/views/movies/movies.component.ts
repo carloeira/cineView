@@ -59,5 +59,4 @@ export class MoviesComponent {
     }
     this.router.navigate(['/']);
   }
-
 }

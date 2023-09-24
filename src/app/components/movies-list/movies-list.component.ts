@@ -36,12 +36,12 @@ export class MoviesListComponent implements OnInit {
     this.store.state$.subscribe((res) => {
       if (res.search) {
         this.movies = res.search;
-      }
+      } 
     });
   }
 
   openMovieDetails(index: number) {
     this.store.saveMovieSelected(this.movies[index]);
-    this.router.navigate(['/movie/:id' ]);
+    this.router.navigate(['/movie/:id']);
   }
 }
