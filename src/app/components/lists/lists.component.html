@@ -9,7 +9,7 @@
               src="https://image.tmdb.org/t/p/original/{{ filme.poster_path }}"
               class="rowimg largposter"
               alt="{{ filme.original_title || filme.name }}"
-              routerLink="movie/:id"
+              [routerLink]="['movie', filme.id]"
               >
 
           </ng-container>
@@ -27,6 +27,7 @@
               src="https://image.tmdb.org/t/p/original/{{ filme.poster_path }}"
               class="rowimg poster"
               alt="{{ filme.original_title || filme.name }}"
+              [routerLink]="['movie', filme.id]"
               >
 
           </ng-container>
@@ -44,6 +45,7 @@
               src="https://image.tmdb.org/t/p/original/{{ proximo.poster_path }}"
               class="rowimg largposter"
               alt="{{ proximo.original_title || proximo.name }}"
+              [routerLink]="['movie', proximo.id]"
               >
 
           </ng-container>

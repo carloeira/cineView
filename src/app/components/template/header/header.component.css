@@ -2,11 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   top: 0;
   left: 0;
-  background-color: black;
-  height: 64px;
+  background-color: #212121;
+  height: 10%;
   width: 100%;
   z-index: 10;
   transition: top 0.2s linear;
@@ -39,7 +38,7 @@
 
 .header a.logo {
   display: flex;
-  height: 50px;
+  height: 40px;
 }
 
 .search_form {
@@ -53,7 +52,7 @@
 }
 
 .search input {
-  width: 250px;
+  width: 80px;
   height: 15px;
   line-height: 15px;
   font-size: 1em;
@@ -65,8 +64,14 @@
 }
 
 .header input:hover {
+  width: 250px;
   background-color: #E30F19;
   color: #fff;
+}
+
+.header .submit:hover {
+  background-color: #fff;
+  color: #E30F19;
 }
 
 .submit {
@@ -74,10 +79,10 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  height: 35px;
-  padding: 5px 35px;
+  height: 40px;
+  margin: 15px 15px;
   border: none;
-  background: #000;
+  background: black;
   border-radius: 30px;
   position: relative;
   top: 0;
