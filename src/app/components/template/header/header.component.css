@@ -1,38 +1,88 @@
 .header {
-  display: flexbox;
-  align-items: center;
-  background-size: cover;
-  height: max-content;
-}
-
-.header a {
-  position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
-  text-decoration: none;
-  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  height: 64px;
+  width: 100%;
+  z-index: 10;
+  transition: top 0.2s linear;
+  box-shadow: 6px -1px 37px -4px rgba(0, 0, 0, 0.72);
+  -webkit-box-shadow: 6px -1px 37px -4px rgba(0, 0, 0, 0.72);
+  -moz-box-shadow: 6px -1px 37px -4px rgba(0, 0, 0, 0.72);
 }
-
-.header a:hover {
-  color: #E30F19;
-}
-
-.header .logo {
-  max-height: 32px;
-}
-
-.header .title-group {
-  padding-left: 10px;
-  padding-right: 30px;
-
-}
-
-.header .col {
+.content {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
+.sub_media {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: var(--maxPrimaryPageWidth);
+  width: 100%;
+  padding: 0 40px;
+}
+.nav_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: visible;
+}
 
-.header .title-group i {
-  padding-right: 5px;
+.header a.logo {
+  display: flex;
+  height: 50px;
+}
+
+.search_form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.search input {
+  width: 250px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 1em;
+  border-radius: 30px;
+  padding: 17px 16px;
+  border: none;
+  outline: none;
+  align-items: center;
+}
+
+.header input:hover {
+  background-color: #E30F19;
+  color: #fff;
+}
+
+.submit {
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 35px;
+  padding: 5px 35px;
+  border: none;
+  background: #000;
+  border-radius: 30px;
+  position: relative;
+  top: 0;
+  right: 10px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
 }

@@ -15,7 +15,7 @@
 
         <h1 class="d-inline-block">{{ banner.title || banner.name }}</h1>
         <p class="d-none d-lg-block">{{ banner.overview }}</p>
-        <a href="" class="btn btn-primary text-uppercase font-weight-bold">Veja mais detalhes</a>
+        <a [routerLink]="['/movie', banner.id]" class="btn btn-primary text-uppercase font-weight-bold">Veja mais detalhes</a>
 
       </div>
     </ng-template>
