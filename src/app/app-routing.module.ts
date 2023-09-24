@@ -10,16 +10,16 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   }, {
+    path: 'home/movie/:id',
+    component: SingleMovieComponent
+  }, {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   }, {
     path: 'movie/:id',
     component: SingleMovieComponent
-  },  {
-    path: 'home/movie/:id',
-    component: SingleMovieComponent
-  },   {
+  }, {
     path: 'search',
     component: SearchComponent,
   },

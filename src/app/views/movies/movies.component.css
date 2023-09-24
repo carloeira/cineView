@@ -9,7 +9,6 @@ html {
 .titulo {
   display: flex;
   justify-content: center;
-  height: 50%;
 }
 
 .single-movie-container {
@@ -31,6 +30,7 @@ html {
         padding: 0;
     }
 }
+
 .card {
     padding: 5px;
     margin: 5px 0;

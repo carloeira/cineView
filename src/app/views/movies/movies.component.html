@@ -1,9 +1,7 @@
-<div class="titulo">
-  <h1>Detalhes sobre o filme</h1>
-</div>
 <div class="container-movie-page" *ngIf="movie !== undefined">
   <div class="single-movie-container">
     <div *ngIf="movie !== undefined">
+      <img src="{{ movie.backdrop_path }}" alt="" class="backdrop_path"/>
       <div class="badge">
         <img src="{{ movie.poster_path }}" alt="" class="card" />
       </div>
@@ -36,7 +34,5 @@
     </div>
   </div>
 </div>
-<div class="footer-cont" *ngIf="movie !== undefined">
-  <app-footer></app-footer>
-</div>
+<app-footer></app-footer>
 <router-outlet></router-outlet>

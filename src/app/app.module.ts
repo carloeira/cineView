@@ -37,7 +37,7 @@ import { ListsComponent } from './components/lists/lists.component';
     MoviesListComponent,
     CardComponent,
     SingleMovieComponent,
-    ListsComponent
+    ListsComponent,
   ],
   imports: [
     BrowserModule,
