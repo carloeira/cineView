@@ -1,4 +1,5 @@
 export const environment = {
+  production: true,
   reqUrl: 'https://api.themoviedb.org/3/movie/',
   searchUrl: 'https://api.themoviedb.org/3/search/movie',
   api: 'https://api.themoviedb.org/3',
