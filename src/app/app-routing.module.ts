@@ -1,25 +1,35 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
 import { HomeComponent } from './views/home/home.component';
-import { MoviesComponent } from './views/movies/movies.component';
-import { ListsComponent } from './components/lists/lists.component';
+import { SearchComponent } from './components/search/search.component';
+import { SingleMovieComponent } from './components/single-movie/single-movie.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
   }, {
-    path: 'filme/:id',
-    component: MoviesComponent
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  }, {
+    path: 'movie/:id',
+    component: SingleMovieComponent
+  },  {
+    path: 'home/movie/:id',
+    component: SingleMovieComponent
+  },   {
+    path: 'search',
+    component: SearchComponent,
   },
-  {
-    path: 'bombando',
-    component: ListsComponent
-  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
+  exports: [RouterModule],
 })
+
 export class AppRoutingModule {}

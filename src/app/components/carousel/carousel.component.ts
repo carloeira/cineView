@@ -25,7 +25,7 @@ export class CarouselComponent implements OnInit {
   banners: any = []
 
   fullBanner() {
-    this.service.obterProximos()
+    this.service.obterBanner()
     .subscribe((banner) => {
       this.banners = banner.results
     })

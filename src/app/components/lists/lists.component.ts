@@ -13,10 +13,12 @@ export class ListsComponent {
   ngOnInit(): void {
     this.filmesPopularesData()
     this.filmesProximosData()
+    this.maisAssistidosData()
   }
 
   filmesPopulares: any = []
   filmesProximos: any = []
+  maisAssistidos: any = []
 
   filmesPopularesData() {
     this.service.obterPopulares().subscribe((res) => {
@@ -27,6 +29,12 @@ export class ListsComponent {
   filmesProximosData() {
     this.service.obterProximos().subscribe((res) => {
       this.filmesProximos = res.results
+    })
+  }
+
+  maisAssistidosData() {
+    this.service.maisAssistidos().subscribe((res) => {
+      this.maisAssistidos = res.results
     })
   }
 

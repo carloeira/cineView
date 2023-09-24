@@ -1,23 +1,27 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
-import { NavComponent } from './components/template/nav/nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { HomeComponent } from './views/home/home.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { FilmeService } from "./services/filme.service";
-import { HttpClientModule } from '@angular/common/http';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ListsComponent } from './components/lists/lists.component';
 import { MoviesComponent } from './views/movies/movies.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ResultsComponent } from './components/results/results.component';
+import { MoviesListComponent } from './components/movies-list/movies-list.component';
+import { CardComponent } from './components/card/card.component';
+import { SingleMovieComponent } from './components/single-movie/single-movie.component';
+import { SearchComponent } from './components/search/search.component';
+import { ListsComponent } from './components/lists/lists.component';
 
 
 @NgModule({
@@ -25,24 +29,30 @@ import { MoviesComponent } from './views/movies/movies.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavComponent,
+    SearchComponent,
     HomeComponent,
     CarouselComponent,
-    ListsComponent,
-    MoviesComponent
+    MoviesComponent,
+    ResultsComponent,
+    MoviesListComponent,
+    CardComponent,
+    SingleMovieComponent,
+    ListsComponent
   ],
   imports: [
-    SearchBarComponent,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatToolbarModule,
     HttpClientModule,
     MatSidenavModule,
     MatListModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
   ],
-  providers: [FilmeService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

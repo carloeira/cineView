@@ -6,7 +6,7 @@ export interface Image {
 
 export class Movie {
   status?: string;
-  id?: number;
+  id!: number;
   imdb_id?: string;
   backdrop_path?: string;
   budget?: number;
@@ -32,6 +32,6 @@ export class Movie {
   release_date?: string;
   tagline?: string;
   video?: boolean;
-  vote_average?: number;
+  vote_average!: number;
   vote_count?: number;
 }

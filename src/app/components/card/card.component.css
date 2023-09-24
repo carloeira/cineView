@@ -1,0 +1,60 @@
+.card-container {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.card {
+  padding: 5px;
+  margin: 5px 0;
+  background-color: #282c34;
+  border-radius: 8px;
+  color: white;
+  width: 275px;
+  height: 378px;
+  cursor: pointer;
+}
+
+.card .badge {
+  top: 4px;
+  right: 4px;
+  transform: scale(1) translate(50%, -50%);
+  transform-origin: 100% 0%;
+  position: absolute;
+
+}
+
+.card:hover {
+  background-color: var(--dark-green-color);
+  color: white;
+}
+
+.text-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  text-align: left;
+  width: 280px;
+  margin-bottom: 2rem;
+  margin-left: 1em;
+}
+.movie-details p {
+  font-size: 0.8em;
+  margin: 0;
+}
+
+.vote-average {
+  font-size: 1.2em;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}

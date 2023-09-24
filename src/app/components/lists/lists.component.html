@@ -9,6 +9,7 @@
               src="https://image.tmdb.org/t/p/original/{{ filme.poster_path }}"
               class="rowimg largposter"
               alt="{{ filme.original_title || filme.name }}"
+              routerLink="movie/:id"
               >
 
           </ng-container>
@@ -18,9 +19,9 @@
 
 <div class="contain mt-3 p-4 " id="bombando">
   <div class="row">
-      <h1 class="text-light">Bombando</h1>
+      <h1 class="text-light">Mais Assistidos</h1>
       <div class="rowposter mt-3 p-2">
-          <ng-container *ngFor="let filme of filmesPopulares">
+          <ng-container *ngFor="let filme of maisAssistidos">
 
               <img
               src="https://image.tmdb.org/t/p/original/{{ filme.poster_path }}"
@@ -49,4 +50,3 @@
       </div>
   </div>
 </div>
-
