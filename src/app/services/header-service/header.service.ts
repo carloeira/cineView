@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 import { environment } from 'src/environments/environment';
-
+ 
 @Injectable({
   providedIn: 'root',
 })
@@ -24,7 +24,7 @@ export class HeaderService {
       `${this.searchUrl}${this.apiKey}${this.language}&query=${query.search}`
     );
   }
-  
+
   catch(err: any) {
     console.log(err);
   }

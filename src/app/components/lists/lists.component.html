@@ -3,12 +3,12 @@
   <div class="row">
       <h1 class="text-light">Selecionados</h1>
       <div class="rowposter mt-3 p-2">
-          <ng-container *ngFor="let filme of filmesPopulares; let i = index">
+          <ng-container *ngFor="let populares of filmesPopulares; let i = index">
 
               <img
-              src="https://image.tmdb.org/t/p/original/{{ filme.poster_path }}"
+              src="https://image.tmdb.org/t/p/original/{{ populares.poster_path }}"
               class="rowimg largposter"
-              alt="{{ filme.original_title || filme.name }}"
+              alt="{{ populares.original_title || populares.name }}"
               (click)="openMovieDetails(i)"
               >
 
@@ -21,12 +21,12 @@
   <div class="row">
       <h1 class="text-light">Mais Assistidos</h1>
       <div class="rowposter mt-3 p-2">
-          <ng-container *ngFor="let filme of maisAssistidos; let i = index">
+          <ng-container *ngFor="let mais of maisAssistidos; let i = index">
 
               <img
-              src="https://image.tmdb.org/t/p/original/{{ filme.poster_path }}"
+              src="https://image.tmdb.org/t/p/original/{{ mais.poster_path }}"
               class="rowimg poster"
-              alt="{{ filme.original_title || filme.name }}"
+              alt="{{ mais.original_title || mais.name }}"
               (click)="openMovieDetails(i)"
               >
 
@@ -39,12 +39,12 @@
   <div class="row">
       <h1 class="text-light">Recomendados</h1>
       <div class="rowposter mt-3 p-2">
-          <ng-container *ngFor="let filme of filmesProximos; let i = index">
+          <ng-container *ngFor="let proximos of filmesProximos; let i = index">
 
               <img
-              src="https://image.tmdb.org/t/p/original/{{ filme.poster_path }}"
+              src="https://image.tmdb.org/t/p/original/{{ proximos.poster_path }}"
               class="rowimg largposter"
-              alt="{{ filme.original_title || filme.name }}"
+              alt="{{ proximos.original_title || proximos.name }}"
               (click)="openMovieDetails(i)"
               >
 

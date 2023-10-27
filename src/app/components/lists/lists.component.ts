@@ -58,15 +58,12 @@ export class ListsComponent {
 
   openMovieDetails(index: number) {
     this.store.saveMovieSelected(this.filmesPopulares[index]);
-    console.log(this.filmesPopulares)
     this.router.navigate(['/movie/:id']);
 
     this.store.saveMovieSelected(this.filmesProximos[index]);
-    console.log(this.filmesProximos)
     this.router.navigate(['/movie/:id']);
 
     this.store.saveMovieSelected(this.maisAssistidos[index]);
-    console.log(this.maisAssistidos)
     this.router.navigate(['/movie/:id']);
   }
 }
