@@ -2,20 +2,20 @@
 
   <ngb-carousel class="carousel-inner">
 
-    <ng-template ngbSlide *ngFor="let banner of banners">
+    <ng-template ngbSlide *ngFor="let movie of banners; let i = index">
       <div class="wrapper">
 
         <img class="d-block w-100"
-        src="https://image.tmdb.org/t/p/original/{{ banner.backdrop_path }}"
-        alt="{{ banner.title || banner.name }}"
+        src="https://image.tmdb.org/t/p/original/{{ movie.backdrop_path }}"
+        alt="{{ movie.title || movie.name }}"
         >
       </div>
 
       <div class="carousel-caption">
 
-        <h1 class="d-inline-block">{{ banner.title || banner.name }}</h1>
-        <p class="d-none d-lg-block">{{ banner.overview }}</p>
-        <a [routerLink]="['/movie', banner.id]"
+        <h1 class="d-inline-block">{{ movie.title || movie.name }}</h1>
+        <p class="d-none d-lg-block">{{ movie.overview }}</p>
+        <a (click)="openMovieDetails(i)"
         class="btn btn-primary text-uppercase font-weight-bold"
         >Veja mais detalhes</a>
 

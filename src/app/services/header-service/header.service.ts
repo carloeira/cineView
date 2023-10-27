@@ -24,6 +24,7 @@ export class HeaderService {
       `${this.searchUrl}${this.apiKey}${this.language}&query=${query.search}`
     );
   }
+  
   catch(err: any) {
     console.log(err);
   }

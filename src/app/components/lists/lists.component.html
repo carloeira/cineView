@@ -3,13 +3,13 @@
   <div class="row">
       <h1 class="text-light">Selecionados</h1>
       <div class="rowposter mt-3 p-2">
-          <ng-container *ngFor="let filme of filmesPopulares">
+          <ng-container *ngFor="let filme of filmesPopulares; let i = index">
 
               <img
               src="https://image.tmdb.org/t/p/original/{{ filme.poster_path }}"
               class="rowimg largposter"
               alt="{{ filme.original_title || filme.name }}"
-              [routerLink]="['movie', filme.id]"
+              (click)="openMovieDetails(i)"
               >
 
           </ng-container>
@@ -21,13 +21,13 @@
   <div class="row">
       <h1 class="text-light">Mais Assistidos</h1>
       <div class="rowposter mt-3 p-2">
-          <ng-container *ngFor="let filme of maisAssistidos">
+          <ng-container *ngFor="let filme of maisAssistidos; let i = index">
 
               <img
               src="https://image.tmdb.org/t/p/original/{{ filme.poster_path }}"
               class="rowimg poster"
               alt="{{ filme.original_title || filme.name }}"
-              [routerLink]="['movie', filme.id]"
+              (click)="openMovieDetails(i)"
               >
 
           </ng-container>
@@ -39,13 +39,13 @@
   <div class="row">
       <h1 class="text-light">Recomendados</h1>
       <div class="rowposter mt-3 p-2">
-          <ng-container *ngFor="let proximo of filmesProximos">
+          <ng-container *ngFor="let filme of filmesProximos; let i = index">
 
               <img
-              src="https://image.tmdb.org/t/p/original/{{ proximo.poster_path }}"
+              src="https://image.tmdb.org/t/p/original/{{ filme.poster_path }}"
               class="rowimg largposter"
-              alt="{{ proximo.original_title || proximo.name }}"
-              [routerLink]="['movie', proximo.id]"
+              alt="{{ filme.original_title || filme.name }}"
+              (click)="openMovieDetails(i)"
               >
 
           </ng-container>

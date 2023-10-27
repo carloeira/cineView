@@ -16,12 +16,13 @@ export class FilmeService extends HandleObservableService {
     super();
   }
 
-  private url = environment.api;
-  private key = environment.apikey;
+  url = environment.api;
+  reqUrl = environment.reqUrl;
+  key = environment.apikey;
   language: string = 'pt-BR';
 
   obterPopulares(page: number = 1): Observable<ResponseApi> {
-    const endPointUrl = `${this.url}/movie/popular${this.key}&language=${this.language}&page=${page}`;
+    const endPointUrl = `${this.reqUrl}/popular${this.key}&language=${this.language}&page=${page}`;
     return this.httpClient
       .get<ResponseApi>(endPointUrl)
       .pipe(
@@ -35,15 +36,10 @@ export class FilmeService extends HandleObservableService {
     const endPointUrl = `${this.url}/trending/all/week${this.key}&language=${this.language}&page=${page}`;
     return this.httpClient
       .get<ResponseApi>(endPointUrl)
-      .pipe(
-        retry(2),
-        map(this.extractResponseData),
-        catchError(this.handleError)
-      );
   }
 
   obterProximos(page: number = 1): Observable<ResponseApi> {
-    const endPointUrl = `${this.url}/movie/upcoming${this.key}&language=${this.language}&page=${page}`;
+    const endPointUrl = `${this.reqUrl}/upcoming${this.key}&language=${this.language}&page=${page}`;
     return this.httpClient
       .get<ResponseApi>(endPointUrl)
       .pipe(
@@ -54,7 +50,7 @@ export class FilmeService extends HandleObservableService {
   }
 
   maisAssistidos(page: number = 1): Observable<ResponseApi> {
-    const endPointUrl = `${this.url}/movie/top_rated${this.key}&language=${this.language}&page=${page}`;
+    const endPointUrl = `${this.reqUrl}/top_rated${this.key}&language=${this.language}&page=${page}`;
     return this.httpClient
       .get<ResponseApi>(endPointUrl)
       .pipe(

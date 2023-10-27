@@ -3,6 +3,7 @@ import { ComponentStore } from '@ngrx/component-store';
 import { Observable } from 'rxjs';
 
 import { Movie } from '../components/shared/movie.model';
+import { ResponseApi } from '../components/shared/response-api.model';
 
 export interface OrderState {
   movies: Movie[];

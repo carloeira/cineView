@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FilmeService } from "src/app/services/filme.service";
+import { AppStore } from 'src/app/store/app.store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -8,8 +10,11 @@ import { FilmeService } from "src/app/services/filme.service";
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
+  banners: any
 
   constructor(
+    private store: AppStore,
+    private router: Router,
     private service: FilmeService,
     config: NgbCarouselConfig
     ) {
@@ -19,15 +24,33 @@ export class CarouselComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.fullBanner()
+    this.store.state$.subscribe((res) => {
+      if (res.flag) {
+        this.initialiceSearch();
+      } else {
+        this.initialice();
+      }
+    });
   }
 
-  banners: any = []
-
-  fullBanner() {
+  initialice() {
     this.service.obterBanner()
-    .subscribe((banner) => {
-      this.banners = banner.results
+    .subscribe((res) => {
+      this.banners = res.results
     })
+  }
+
+  initialiceSearch() {
+    this.store.state$.subscribe((res) => {
+      if (res.search) {
+        this.banners = res.search;
+      }
+    });
+  }
+
+  openMovieDetails(index: number) {
+    this.store.saveMovieSelected(this.banners[index]);
+    console.log(this.banners)
+    this.router.navigate(['/movie/:id']);
   }
 }
