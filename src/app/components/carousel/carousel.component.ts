@@ -50,7 +50,6 @@ export class CarouselComponent implements OnInit {
 
   openMovieDetails(index: number) {
     this.store.saveMovieSelected(this.banners[index]);
-    console.log(this.banners)
     this.router.navigate(['/movie/:id']);
   }
 }
