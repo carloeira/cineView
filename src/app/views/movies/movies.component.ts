@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Movie } from 'src/app/components/shared/movie.model';
+import { FilmeService } from 'src/app/services/filme.service';
 import { SingleMovieService } from 'src/app/services/single-movie/single-movie.service';
 import { AppStore } from 'src/app/store/app.store';
 import { environment } from 'src/environments/environment';
@@ -18,6 +19,7 @@ export class MoviesComponent {
     private store: AppStore,
     private router: Router,
     private singleMovie: SingleMovieService,
+    private filmeService: FilmeService,
     private config: NgbRatingConfig
   ) {
     config.max = 10;

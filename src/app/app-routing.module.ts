@@ -14,7 +14,7 @@ const routes: Routes = [
     redirectTo: '/home',
     pathMatch: 'full'
   }, {
-    path: 'movie/id', 
+    path: 'movie/:id',
     component: SingleMovieComponent
   }, {
     path: 'search',
