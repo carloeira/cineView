@@ -52,7 +52,7 @@ import { ListsComponent } from './components/lists/lists.component';
     NgbModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [AppRoutingModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
